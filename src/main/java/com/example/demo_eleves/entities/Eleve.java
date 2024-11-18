@@ -1,11 +1,15 @@
 package com.example.demo_eleves.entities;
 
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 
 @Entity
 public class Eleve {
@@ -20,6 +24,9 @@ public class Eleve {
     @ManyToOne
     private Ecole ecole;
 
+    @OneToMany (mappedBy = "eleve")
+	 private List<Image> images;
+    
     
     public Eleve() {}
 
@@ -70,6 +77,15 @@ public class Eleve {
 	public void setClasse(String classe) {
 		this.classe = classe;
 	}
+
+	public List<Image> getImages(){
+		return images;
+	}
+	
+	public void setImages(List<Image> l ){
+		images=l;
+	}
+	
 }
 
 

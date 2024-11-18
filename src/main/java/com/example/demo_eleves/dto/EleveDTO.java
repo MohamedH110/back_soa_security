@@ -1,7 +1,9 @@
 package com.example.demo_eleves.dto;
 
-import com.example.demo_eleves.entities.Ecole;
+import java.util.List;
 
+import com.example.demo_eleves.entities.Ecole;
+import com.example.demo_eleves.entities.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -19,6 +21,8 @@ public class EleveDTO {
 	    private Ecole ecole;
 	    
 	    private String nomEcole;
+	    
+	    public List<Image> images;
 
 
 }
